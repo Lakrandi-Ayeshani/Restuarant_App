@@ -4,6 +4,8 @@ import Home from './pages/home'
 import Customer from './pages/customer';
 import Chef from './pages/chef';
 import Manager from './pages/manager';
+import Customer2 from './pages/customer2';
+import OrderPage from './pages/OrderPage';
 
 function App() {
   return (
@@ -11,7 +13,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path = '/' element ={<Home/>}/>
-          <Route path ='/customer' element={<Customer/>}/>
+          <Route path ='/customer' element={<Customer/>}>
+            <Route path = '' element={<Customer2/>}/>
+            <Route path ={`:name`} element={<OrderPage/>}/>
+          </Route>
           <Route path ='/chef' element={<Chef/>}/>
           <Route path ='/manager' element={<Manager/>}/>
         </Routes>
